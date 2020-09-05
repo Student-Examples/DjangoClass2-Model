@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Сайт книг</h1>
+
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Год</th>
+            <th></th>
+        </tr>
+        {% for book in books %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.year }}</td>
+                <td>
+                    <a href="{% url 'book' book.id %}">Посмотреть</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
